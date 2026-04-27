@@ -1,0 +1,26 @@
+/* Direction B — Confident Femme */
+.dir-b {
+  --b-cream: #FFF7F2;
+  --b-berry: #5A1530;
+  --b-berry-deep: #2C0A18;
+  --b-gold: #D4A85A;
+  --b-gold-soft: #E8CD93;
+  --b-ink: #1A0A12;
+  --b-mute: #8A6E78;
+
+  background: var(--b-cream);
+  color: var(--b-ink);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+}
+
+.dir-b .display { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; letter-spacing: -0.035em; line-height: 0.95; }
+.dir-b .display-tight { font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+.dir-b .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: var(--b-berry); }
+.dir-b .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: transform 160ms ease, box-shadow 160ms ease; }
+.dir-b .btn-berry { background: var(--b-berry); color: var(--b-cream); }
+.dir-b .btn-berry:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(90,21,48,0.25); }
+.dir-b .btn-cream { background: var(--b-cream); color: var(--b-berry); }
+.dir-b .btn-gold { background: var(--b-gold); color: var(--b-berry-deep); }
+.dir-b .btn-ghost { background: transparent; border: 1.5px solid var(--b-berry); color: var(--b-berry); }
+.dir-b .chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; }

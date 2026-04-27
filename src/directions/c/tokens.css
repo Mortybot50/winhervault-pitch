@@ -1,0 +1,27 @@
+/* Direction C — Soft Premium */
+.dir-c {
+  --c-ivory: #F8F4ED;
+  --c-sand: #ECDFCF;
+  --c-powder: #F0DAD2;
+  --c-blush: #E5C8C2;
+  --c-sage: #A8B5A0;
+  --c-sage-deep: #6B7A66;
+  --c-ink: #3A3A36;
+  --c-ink-soft: #5C5C56;
+  --c-mute: #94918A;
+
+  background: var(--c-ivory);
+  color: var(--c-ink);
+  font-family: "DM Sans", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+}
+
+.dir-c .display { font-family: "Fraunces", "Cormorant Garamond", serif; font-weight: 400; letter-spacing: -0.015em; line-height: 1.04; font-variation-settings: "opsz" 144, "SOFT" 100; }
+.dir-c .display em, .dir-c .italic { font-style: italic; font-weight: 400; }
+.dir-c .sans { font-family: "DM Sans", sans-serif; }
+.dir-c .eyebrow { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--c-sage-deep); font-weight: 500; }
+.dir-c .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; transition: opacity 200ms ease; }
+.dir-c .btn-ink { background: var(--c-ink); color: var(--c-ivory); }
+.dir-c .btn-sage { background: var(--c-sage); color: var(--c-ink); }
+.dir-c .btn-ghost { background: transparent; border: 1px solid var(--c-ink); color: var(--c-ink); }
+.dir-c .quiet-card { background: var(--c-ivory); border: 1px solid rgba(58,58,54,0.08); border-radius: 20px; }

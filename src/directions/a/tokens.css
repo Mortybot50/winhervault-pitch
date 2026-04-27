@@ -1,0 +1,29 @@
+/* Direction A — Editorial Luxe */
+.dir-a {
+  --a-cream: #F5EFE6;
+  --a-paper: #FBF7F0;
+  --a-ink: #111111;
+  --a-ink-soft: #2A2622;
+  --a-rule: #1F1B17;
+  --a-mute: #7A7268;
+  --a-spot: #7A2A2A;
+  --a-spot-deep: #4A1818;
+  --a-gold: #C9B79C;
+
+  background: var(--a-paper);
+  color: var(--a-ink);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.dir-a .serif { font-family: "Playfair Display", "Cormorant Garamond", serif; font-weight: 500; letter-spacing: -0.01em; }
+.dir-a .display { font-family: "Playfair Display", serif; font-weight: 500; letter-spacing: -0.025em; line-height: 1.02; }
+.dir-a .italic-display { font-family: "Playfair Display", serif; font-style: italic; font-weight: 400; }
+.dir-a .eyebrow { font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--a-mute); }
+.dir-a .rule { border-top: 1px solid var(--a-rule); }
+.dir-a .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 0; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: opacity 160ms ease; }
+.dir-a .btn-dark { background: var(--a-ink); color: var(--a-paper); }
+.dir-a .btn-dark:hover { opacity: 0.85; }
+.dir-a .btn-ghost { border: 1px solid var(--a-ink); color: var(--a-ink); background: transparent; }
+.dir-a .pull { font-family: "Playfair Display", serif; font-style: italic; font-size: 28px; line-height: 1.3; color: var(--a-spot); }

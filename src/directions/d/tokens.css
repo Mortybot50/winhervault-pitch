@@ -1,0 +1,31 @@
+/* Direction D — Maximalist Aspirational */
+.dir-d {
+  --d-emerald: #0E3B2E;
+  --d-emerald-deep: #062018;
+  --d-violet: #3B1F8B;
+  --d-pink: #E5267A;
+  --d-pink-bright: #FF4D9F;
+  --d-gold: #F5C518;
+  --d-cream: #FFF6E5;
+  --d-ink: #08080C;
+
+  background: var(--d-cream);
+  color: var(--d-ink);
+  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  font-size: 16px;
+}
+
+.dir-d .display { font-family: "Archivo Black", sans-serif; letter-spacing: -0.02em; line-height: 0.92; text-transform: uppercase; }
+.dir-d .display-mixed { font-family: "Archivo Black", sans-serif; line-height: 0.92; letter-spacing: -0.02em; }
+.dir-d .sans { font-family: "Plus Jakarta Sans", sans-serif; }
+.dir-d .eyebrow { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 700; }
+.dir-d .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; border-radius: 999px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: transform 200ms ease, box-shadow 200ms ease; }
+.dir-d .btn:hover { transform: translateY(-2px); }
+.dir-d .btn-pink { background: var(--d-pink); color: var(--d-cream); box-shadow: 0 4px 0 var(--d-pink-bright); }
+.dir-d .btn-gold { background: var(--d-gold); color: var(--d-ink); box-shadow: 0 4px 0 #C99A0E; }
+.dir-d .btn-emerald { background: var(--d-emerald); color: var(--d-gold); }
+.dir-d .btn-cream { background: var(--d-cream); color: var(--d-ink); }
+.dir-d .ticker { background: var(--d-pink); color: var(--d-cream); padding: 8px 0; overflow: hidden; white-space: nowrap; }
+.dir-d .marquee { display: inline-flex; gap: 36px; animation: marquee 40s linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.dir-d .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; }
