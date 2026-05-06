@@ -1,53 +1,72 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const directions = [
+// v2 — new client brief: premium lifestyle membership platform for women.
+// Featured prominently. v1 collapsed below for prospect comparison.
+const v2Directions = [
   {
     slug: "a",
+    brand: "HerCircle",
     name: "Editorial Luxe",
-    tagline: "Vogue meets a giveaway club.",
+    tagline: "A Vogue-grade members club. Considered, restrained, premium.",
     description:
-      "Serif display, generous whitespace, magazine-style art direction. Cream + black + ink-spot accent. Reserved, premium, calm confidence.",
-    fontPair: "Playfair Display × Inter",
-    swatches: ["#F5EFE6", "#111111", "#7A2A2A", "#C9B79C"],
-    bg: "linear-gradient(135deg, #F5EFE6 0%, #E8DDC9 100%)",
-    fg: "#111",
+      "Display serif italic emphasis, generous whitespace, square-cornered cards. Cream + ink + saffron-blush accent. Reserved confidence.",
+    fontPair: "Cormorant Garamond × Raleway",
+    swatches: ["#FFF1E3", "#1E1A18", "#A14444", "#D9CDB6"],
+    bg: "linear-gradient(135deg, #FFF1E3 0%, #F2E1CA 100%)",
+    fg: "#1E1A18",
+    accent: "#A14444",
   },
   {
     slug: "b",
-    name: "Confident Femme",
-    tagline: "Glossier-era confidence with a luxury twist.",
+    brand: "Haus Of Her",
+    name: "Soft Premium",
+    tagline: "Aesop-adjacent. Slow luxury, considered giveaways, soft-paced gatherings.",
     description:
-      "Bold geometric sans, saturated brand palette, tight modular grids. Deep berry · champagne gold · cream. Modern, energetic, unapologetic.",
-    fontPair: "Bricolage Grotesque × Inter",
-    swatches: ["#FFF7F2", "#5A1530", "#D4A85A", "#1A0A12"],
-    bg: "linear-gradient(135deg, #5A1530 0%, #2C0A18 100%)",
-    fg: "#FFF7F2",
+      "Sand + blush + sage. Fraunces display × DM Sans body. Rounded 24px cards, pill buttons, generous breath. Spa-calm.",
+    fontPair: "Fraunces × DM Sans",
+    swatches: ["#F4ECDF", "#E8C8BE", "#A6B5A0", "#3A3A36"],
+    bg: "linear-gradient(135deg, #F4ECDF 0%, #E8C8BE 100%)",
+    fg: "#3A3A36",
+    accent: "#5B6B54",
   },
   {
     slug: "c",
-    name: "Soft Premium",
-    tagline: "Aesop / Le Labo for lifestyle club.",
+    brand: "WinHer Vault",
+    name: "Confident Femme",
+    tagline: "Glossier-era confidence with a luxury twist. Conversion-shaped.",
     description:
-      "Muted pastels, humanist serif × neo-grotesque sans. Powder pink, sand, sage, ivory. Quiet luxury, restraint, taste.",
-    fontPair: "Fraunces × DM Sans",
-    swatches: ["#F4E8DD", "#E5C8C2", "#A8B5A0", "#3A3A36"],
-    bg: "linear-gradient(135deg, #F4E8DD 0%, #E5C8C2 100%)",
-    fg: "#3A3A36",
+      "Deep berry + champagne gold + cream. Bricolage Grotesque × Inter. Punchy CTAs, saturated accents, commercial energy. Brand kept.",
+    fontPair: "Bricolage Grotesque × Inter",
+    swatches: ["#FFF7F2", "#5A1530", "#D4A85A", "#1F0F18"],
+    bg: "linear-gradient(135deg, #5A1530 0%, #2C0A18 100%)",
+    fg: "#FFF7F2",
+    accent: "#D4A85A",
   },
   {
     slug: "d",
-    name: "Maximalist Aspirational",
-    tagline: "Selfridges / Net-a-Porter energy.",
+    brand: "HerCircle",
+    name: "Modern Minimal",
+    tagline: "Aesop-museum-store quiet. Whitespace-driven, monochrome, type-led.",
     description:
-      "Big imagery, bold colour blocks, motion-forward feel. Saturated jewel tones — emerald, royal violet, hot pink, gold. Loud, joyful, celebratory.",
-    fontPair: "Archivo Black × Plus Jakarta Sans",
-    swatches: ["#0E3B2E", "#E5267A", "#F5C518", "#3B1F8B"],
-    bg: "linear-gradient(135deg, #0E3B2E 0%, #3B1F8B 50%, #E5267A 100%)",
-    fg: "#FFFFFF",
+      "Bone + warm grey + ink. Tenor Sans display × Inter body. Hairline rules, museum-grid layouts, no decoration. Maximum restraint.",
+    fontPair: "Tenor Sans × Inter",
+    swatches: ["#F8F6F2", "#EDE9E2", "#8E867B", "#1A1814"],
+    bg: "linear-gradient(135deg, #F8F6F2 0%, #D9D2C5 100%)",
+    fg: "#1A1814",
+    accent: "#5C5145",
   },
 ];
 
+const v1Directions = [
+  { slug: "a", name: "v1 — Editorial Luxe", fontPair: "Playfair × Inter" },
+  { slug: "b", name: "v1 — Confident Femme", fontPair: "Bricolage × Inter" },
+  { slug: "c", name: "v1 — Soft Premium", fontPair: "Fraunces × DM Sans" },
+  { slug: "d", name: "v1 — Maximalist", fontPair: "Archivo Black × Plus Jakarta" },
+];
+
 export default function Switcher() {
+  const [showV1, setShowV1] = useState(false);
   return (
     <div
       style={{
@@ -57,7 +76,7 @@ export default function Switcher() {
         fontFamily: "Inter, system-ui, sans-serif",
       }}
     >
-      <header style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 32px 24px" }}>
+      <header style={{ maxWidth: 1320, margin: "0 auto", padding: "56px 32px 24px" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
           <div>
             <p
@@ -69,32 +88,32 @@ export default function Switcher() {
                 margin: 0,
               }}
             >
-              Pitch artefact · April 2026
+              Pitch artefact · v2 · May 2026
             </p>
             <h1
               style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(40px, 6vw, 72px)",
-                fontWeight: 500,
+                fontFamily: "'Tenor Sans', 'Cormorant Garamond', serif",
+                fontSize: "clamp(44px, 7vw, 88px)",
+                fontWeight: 400,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
-                margin: "12px 0 0",
+                margin: "16px 0 0",
               }}
             >
               WinHerVault — four redesign directions.
             </h1>
             <p
               style={{
-                maxWidth: 720,
+                maxWidth: 760,
                 color: "#C2BBAE",
                 fontSize: 17,
-                lineHeight: 1.6,
+                lineHeight: 1.65,
                 margin: "20px 0 0",
               }}
             >
-              Same four screens — Home, Memberships, Current Draw, Member Dashboard — rendered four
-              completely different ways. Pick the direction that feels most like the brand you want to
-              build, and we&rsquo;ll polish that one to production fidelity.
+              Repositioning from "lottery club" to a <strong style={{ color: "#F2EFEA" }}>premium lifestyle members club for women</strong> —
+              giveaways are one perk, not the product. Each direction renders eight pages: Home, Memberships,
+              Winners, Events, Discounts, Charity, Login, Member Dashboard. Pick the brand world that feels right.
             </p>
           </div>
           <a
@@ -119,23 +138,23 @@ export default function Switcher() {
 
       <main
         style={{
-          maxWidth: 1280,
+          maxWidth: 1320,
           margin: "0 auto",
-          padding: "32px 32px 96px",
+          padding: "32px 32px 64px",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
           gap: 24,
         }}
       >
-        {directions.map((d) => (
+        {v2Directions.map((d) => (
           <article
             key={d.slug}
             style={{
               background: d.bg,
               color: d.fg,
-              borderRadius: 24,
+              borderRadius: 20,
               overflow: "hidden",
-              minHeight: 460,
+              minHeight: 520,
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -154,7 +173,7 @@ export default function Switcher() {
                     opacity: 0.7,
                   }}
                 >
-                  Direction {d.slug.toUpperCase()}
+                  /v2/{d.slug} · {d.brand}
                 </span>
                 <div style={{ display: "flex", gap: 6 }}>
                   {d.swatches.map((s) => (
@@ -177,86 +196,159 @@ export default function Switcher() {
                   fontSize: "clamp(32px, 4vw, 44px)",
                   fontWeight: 500,
                   letterSpacing: "-0.01em",
-                  margin: "32px 0 8px",
+                  margin: "36px 0 8px",
                   fontFamily:
                     d.slug === "a"
-                      ? "'Playfair Display', serif"
+                      ? "'Cormorant Garamond', serif"
                       : d.slug === "b"
-                      ? "'Bricolage Grotesque', sans-serif"
-                      : d.slug === "c"
                       ? "'Fraunces', serif"
-                      : "'Archivo Black', sans-serif",
-                  textTransform: d.slug === "d" ? "uppercase" : "none",
+                      : d.slug === "c"
+                      ? "'Bricolage Grotesque', sans-serif"
+                      : "'Tenor Sans', serif",
                 }}
               >
                 {d.name}
               </h2>
-              <p style={{ fontSize: 14, opacity: 0.85, margin: "0 0 20px", fontStyle: d.slug === "a" ? "italic" : "normal" }}>
+              <p style={{ fontSize: 14, opacity: 0.85, margin: "0 0 20px", fontStyle: "italic" }}>
                 {d.tagline}
               </p>
-              <p style={{ fontSize: 15, lineHeight: 1.55, opacity: 0.85, margin: 0 }}>{d.description}</p>
+              <p style={{ fontSize: 15, lineHeight: 1.6, opacity: 0.85, margin: 0 }}>{d.description}</p>
             </div>
 
-            <div style={{ marginTop: 32, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", opacity: 0.7 }}>
-                {d.fontPair}
-              </span>
-              <Link
-                to={`/${d.slug}`}
-                style={{
-                  fontSize: 13,
-                  fontWeight: 500,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  background: d.fg,
-                  color: d.bg.includes("#0B") || d.fg === "#FFF7F2" || d.fg === "#FFFFFF" ? d.swatches[1] : "#fff",
-                  textDecoration: "none",
-                  padding: "12px 22px",
-                  borderRadius: 999,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 10,
-                }}
-              >
-                View this direction →
-              </Link>
+            <div style={{ marginTop: 32 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 18, fontSize: 11, opacity: 0.7, letterSpacing: "0.04em" }}>
+                {["Home", "Memberships", "Winners", "Events", "Discounts", "Charity", "Login", "Dashboard"].map((p) => (
+                  <Link
+                    key={p}
+                    to={`/v2/${d.slug}/${p === "Home" ? "" : p.toLowerCase()}`}
+                    style={{
+                      color: d.fg,
+                      textDecoration: "none",
+                      padding: "4px 10px",
+                      borderRadius: 999,
+                      background: "rgba(0,0,0,0.06)",
+                      fontSize: 11,
+                      border: "1px solid rgba(0,0,0,0.04)",
+                    }}
+                  >
+                    {p}
+                  </Link>
+                ))}
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+                <span style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", opacity: 0.7 }}>
+                  {d.fontPair}
+                </span>
+                <Link
+                  to={`/v2/${d.slug}`}
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 500,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    background: d.fg,
+                    color: d.fg === "#FFF7F2" || d.fg === "#FFFFFF" ? d.accent : d.bg.includes("#5A1530") ? "#fff" : "#fff",
+                    textDecoration: "none",
+                    padding: "12px 22px",
+                    borderRadius: 999,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 10,
+                  }}
+                >
+                  Open {d.brand} →
+                </Link>
+              </div>
             </div>
           </article>
         ))}
       </main>
 
+      {/* v1 collapsed for prospect comparison */}
+      <section style={{ maxWidth: 1320, margin: "0 auto", padding: "0 32px 64px" }}>
+        <button
+          type="button"
+          onClick={() => setShowV1((v) => !v)}
+          style={{
+            background: "transparent",
+            border: "1px solid rgba(242,239,234,0.18)",
+            color: "#C2BBAE",
+            padding: "14px 24px",
+            borderRadius: 999,
+            fontSize: 12,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            cursor: "pointer",
+            fontFamily: "inherit",
+          }}
+        >
+          {showV1 ? "Hide" : "Show"} v1 first-pass directions ({v1Directions.length}) {showV1 ? "↑" : "↓"}
+        </button>
+        {showV1 && (
+          <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+            {v1Directions.map((d) => (
+              <Link
+                key={d.slug}
+                to={`/${d.slug}`}
+                style={{
+                  textDecoration: "none",
+                  color: "#F2EFEA",
+                  padding: "20px 24px",
+                  border: "1px solid rgba(242,239,234,0.12)",
+                  borderRadius: 14,
+                  background: "rgba(255,255,255,0.02)",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: 16,
+                }}
+              >
+                <div>
+                  <p style={{ margin: 0, fontSize: 14, fontWeight: 500 }}>{d.name}</p>
+                  <p style={{ margin: "4px 0 0", fontSize: 11, color: "#7E776B", letterSpacing: "0.04em" }}>{d.fontPair}</p>
+                </div>
+                <span style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A39B8E" }}>/{d.slug} →</span>
+              </Link>
+            ))}
+            <p style={{ gridColumn: "1 / -1", fontSize: 12, color: "#7E776B", margin: "8px 0 0", fontStyle: "italic" }}>
+              First-pass design explorations — kept for context. v2 above is the live recommendation.
+            </p>
+          </div>
+        )}
+      </section>
+
       <footer
         style={{
-          maxWidth: 1280,
+          maxWidth: 1320,
           margin: "0 auto",
-          padding: "0 32px 56px",
+          padding: "0 32px 64px",
           color: "#7E776B",
           fontSize: 13,
-          lineHeight: 1.6,
+          lineHeight: 1.65,
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
           gap: 24,
         }}
       >
         <div>
-          <p style={{ margin: 0, color: "#C2BBAE", fontWeight: 500 }}>How to read these</p>
+          <p style={{ margin: 0, color: "#C2BBAE", fontWeight: 500 }}>What v2 is</p>
           <p style={{ margin: "6px 0 0" }}>
-            Each direction is a fully-distinct visual world covering the same four screens. Click into any
-            direction and use its in-page nav to move between Home, Memberships, Current Draw, and Dashboard.
+            A reposition. Members club first, giveaways one of four perks. 8 pages × 4 brand worlds. Cancel-anytime,
+            weekly pricing, member-gated previews, $5/mo charity baked into every tier.
           </p>
         </div>
         <div>
-          <p style={{ margin: 0, color: "#C2BBAE", fontWeight: 500 }}>What every direction does</p>
+          <p style={{ margin: 0, color: "#C2BBAE", fontWeight: 500 }}>How to demo</p>
           <p style={{ margin: "6px 0 0" }}>
-            Pricing-forward hero · women-first copy · weekly-cost framing · live charity number (never $0) ·
-            cleaned 4-item nav · custom premium typography.
+            Open any direction, walk the nav top-to-bottom. On Events / Discounts, append <code style={{ color: "#C2BBAE", fontFamily: "ui-monospace, monospace" }}>?member=1</code> to
+            see the unlocked-member view. Login is a stub — submit goes to /dashboard.
           </p>
         </div>
         <div>
           <p style={{ margin: 0, color: "#C2BBAE", fontWeight: 500 }}>What this is not</p>
           <p style={{ margin: "6px 0 0" }}>
-            A pitch artefact, not a production rebuild. All numbers, winners, and dashboard state are mock
-            data. Nothing is wired to a backend.
+            A pitch artefact, not a production rebuild. All numbers, winners, and dashboard state are mock data.
+            Nothing is wired to a backend.
           </p>
         </div>
       </footer>

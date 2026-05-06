@@ -1,0 +1,90 @@
+/* /v2/a — HerCircle · Editorial Luxe (Ella May Ding north star) */
+.dir-v2a {
+  --a2-cream: #fff1e3;
+  --a2-cream-deep: #f5e3ce;
+  --a2-paper: #fffaf0;
+  --a2-ink: #2a2520;
+  --a2-ink-soft: #4a4239;
+  --a2-mute: #8a8076;
+  --a2-rule: #d8c6ad;
+  --a2-spot: #6b3a2a;
+  --a2-spot-deep: #4a2418;
+
+  background: var(--a2-cream);
+  color: var(--a2-ink);
+  font-family: "Raleway", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.dir-v2a .display {
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+.dir-v2a .display-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.dir-v2a .serif { font-family: "Cormorant Garamond", serif; font-weight: 400; }
+.dir-v2a .eyebrow {
+  font-family: "Raleway", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--a2-mute);
+  font-weight: 500;
+}
+.dir-v2a .label {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.dir-v2a .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 200ms ease;
+  cursor: pointer;
+  border: none;
+}
+.dir-v2a .btn-dark { background: var(--a2-ink); color: var(--a2-cream); }
+.dir-v2a .btn-dark:hover { background: var(--a2-spot-deep); }
+.dir-v2a .btn-ghost { background: transparent; color: var(--a2-ink); border: 1px solid var(--a2-ink); }
+.dir-v2a .btn-ghost:hover { background: var(--a2-ink); color: var(--a2-cream); }
+.dir-v2a .rule { border-top: 1px solid var(--a2-rule); }
+.dir-v2a a { color: inherit; }
+
+.dir-v2a .locked {
+  position: relative;
+}
+.dir-v2a .locked > .locked-content {
+  filter: blur(6px);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+}
+.dir-v2a .locked > .locked-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  background: linear-gradient(180deg, rgba(255,241,227,0.55), rgba(255,241,227,0.92));
+}

@@ -1,0 +1,89 @@
+/* /v2/b — Haus Of Her · Soft Premium / spa-calm */
+.dir-v2b {
+  --b2-sand: #f4ecdf;
+  --b2-paper: #faf6ee;
+  --b2-blush: #ead7c8;
+  --b2-blush-deep: #d8b8a4;
+  --b2-sage: #b6c2a8;
+  --b2-sage-deep: #8a9a7a;
+  --b2-ink: #2f322c;
+  --b2-ink-soft: #4a4d44;
+  --b2-mute: #8b8d83;
+  --b2-rule: #d8cdba;
+
+  background: var(--b2-sand);
+  color: var(--b2-ink);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+}
+
+.dir-v2b .display {
+  font-family: "Fraunces", "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.dir-v2b .display-italic {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 300;
+}
+.dir-v2b .serif { font-family: "Fraunces", serif; font-weight: 400; }
+.dir-v2b .eyebrow {
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--b2-mute);
+  font-weight: 400;
+}
+.dir-v2b .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: all 240ms ease;
+  border: none;
+  cursor: pointer;
+}
+.dir-v2b .btn-primary { background: var(--b2-ink); color: var(--b2-paper); }
+.dir-v2b .btn-primary:hover { background: var(--b2-sage-deep); }
+.dir-v2b .btn-ghost { background: transparent; color: var(--b2-ink); border: 1px solid var(--b2-ink); }
+.dir-v2b .btn-ghost:hover { background: var(--b2-ink); color: var(--b2-paper); }
+.dir-v2b .btn-soft { background: var(--b2-paper); color: var(--b2-ink); border: 1px solid var(--b2-rule); }
+.dir-v2b a { color: inherit; }
+
+.dir-v2b .card {
+  background: var(--b2-paper);
+  border: 1px solid var(--b2-rule);
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.dir-v2b .locked > .locked-content {
+  filter: blur(8px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.dir-v2b .locked > .locked-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  background: linear-gradient(180deg, rgba(244,236,223,0.4), rgba(244,236,223,0.92));
+  border-radius: 24px;
+}
