@@ -71,6 +71,17 @@ import CharityV2D from "./directions/v2/d/pages/Charity";
 import LoginV2D from "./directions/v2/d/pages/Login";
 import DashboardV2D from "./directions/v2/d/pages/Dashboard";
 
+// Final — single-direction HerCircle redesign per client brief
+import LayoutFinal from "./directions/final/Layout";
+import HomeFinal from "./directions/final/pages/Home";
+import MembershipsFinal from "./directions/final/pages/Memberships";
+import WinnersFinal from "./directions/final/pages/Winners";
+import EventsFinal from "./directions/final/pages/Events";
+import DiscountsFinal from "./directions/final/pages/Discounts";
+import CharityFinal from "./directions/final/pages/Charity";
+import LoginFinal from "./directions/final/pages/Login";
+import DashboardFinal from "./directions/final/pages/Dashboard";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
@@ -149,6 +160,18 @@ createRoot(document.getElementById("root")!).render(
           <Route path="charity" element={<CharityV2D />} />
           <Route path="login" element={<LoginV2D />} />
           <Route path="dashboard" element={<DashboardV2D />} />
+        </Route>
+
+        {/* Final — single direction per client brief */}
+        <Route path="/final" element={<LayoutFinal />}>
+          <Route index element={<HomeFinal />} />
+          <Route path="memberships" element={<MembershipsFinal />} />
+          <Route path="winners" element={<WinnersFinal />} />
+          <Route path="events" element={<EventsFinal />} />
+          <Route path="discounts" element={<DiscountsFinal />} />
+          <Route path="charity" element={<CharityFinal />} />
+          <Route path="login" element={<LoginFinal />} />
+          <Route path="dashboard" element={<DashboardFinal />} />
         </Route>
       </Routes>
     </BrowserRouter>
