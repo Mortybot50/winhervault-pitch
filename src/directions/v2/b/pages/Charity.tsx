@@ -12,7 +12,7 @@ export default function CharityV2B() {
             Five dollars, <em className="display-italic">every month.</em>
           </h1>
           <p style={{ fontSize: 18, color: "var(--b2-ink-soft)", maxWidth: 640, margin: "0 auto", lineHeight: 1.7 }}>
-            Five dollars from every membership goes to an Australian women's charity. Reported
+            Five dollars from every membership goes to Share The Dignity. Reported
             on every dashboard. Audited annually. That's the deal.
           </p>
         </div>

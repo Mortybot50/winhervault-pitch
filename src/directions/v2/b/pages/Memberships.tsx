@@ -140,7 +140,7 @@ export default function MembershipsV2B() {
           { q: "Can I cancel any time?", a: "Yes. From the dashboard, no questions. You stay a member until the end of the month you've paid for." },
           { q: "What if I don't win?", a: "Most members never do. The membership is built around the discount vault, the gatherings, and the giving — winning is the bonus." },
           { q: "How are draws done?", a: "Live on Instagram, monthly, by an independent draw caller. Licensed VIC TP/03720. Records audited annually." },
-          { q: "Who's the charity?", a: "Five dollars from every membership funds an Australian women's charity. Final partner announcing soon." },
+          { q: "Who's the charity?", a: "Five dollars from every membership funds Share The Dignity." },
           { q: "Can I pause my membership?", a: "Up to 90 days a year. Useful if you're travelling or just want a quieter month." },
         ].map((f) => (
           <div key={f.q} style={{ borderTop: "1px solid var(--b2-rule)", padding: "24px 0" }}>

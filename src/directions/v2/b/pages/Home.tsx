@@ -128,7 +128,7 @@ export default function HomeV2B() {
               {
                 n: "03",
                 h: "Belong, with purpose",
-                p: "Five dollars from every membership funds an Australian women's charity, monthly.",
+                p: "Five dollars from every membership funds Share The Dignity, monthly.",
               },
             ].map((b) => (
               <div key={b.n} className="card" style={{ background: "var(--b2-sand)" }}>

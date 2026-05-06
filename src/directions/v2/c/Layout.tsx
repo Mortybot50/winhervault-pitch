@@ -38,8 +38,8 @@ export default function LayoutV2C() {
           }}
         >
           <Link to="/v2/c" style={{ textDecoration: "none", color: "inherit", display: "inline-flex", alignItems: "baseline", gap: 8 }}>
-            <span className="display" style={{ fontSize: 22, letterSpacing: "-0.03em" }}>WinHer</span>
-            <span className="display-italic" style={{ fontSize: 22, color: "var(--c2-berry)" }}>Vault</span>
+            <span className="display" style={{ fontSize: 22, letterSpacing: "-0.03em" }}>Her</span>
+            <span className="display-italic" style={{ fontSize: 22, color: "var(--c2-berry)" }}>Circle</span>
           </Link>
           <nav className="desktop-nav" style={{ display: "flex", gap: 28 }}>
             {nav.map((n) => (
@@ -143,7 +143,7 @@ export default function LayoutV2C() {
         >
           <div>
             <p className="display" style={{ fontSize: 32, margin: 0 }}>
-              WinHer <em className="display-italic" style={{ color: "var(--c2-gold)" }}>Vault</em>
+              Her <em className="display-italic" style={{ color: "var(--c2-gold)" }}>Circle</em>
             </p>
             <p style={{ color: "rgba(255,247,242,0.7)", maxWidth: 320, fontSize: 14, lineHeight: 1.7, marginTop: 12 }}>
               The members club where every dollar gives, every week wins.
@@ -169,14 +169,14 @@ export default function LayoutV2C() {
           <div>
             <p className="eyebrow" style={{ color: "var(--c2-gold)" }}>Find us</p>
             <ul style={{ listStyle: "none", padding: 0, margin: "16px 0 0", lineHeight: 2.2, fontSize: 13, color: "rgba(255,247,242,0.85)" }}>
-              <li>Instagram @winhervault</li>
-              <li>hello@winhervault.com.au</li>
+              <li>Instagram @hercircle</li>
+              <li>hello@hercircle.com.au</li>
               <li>Melbourne, AU</li>
             </ul>
           </div>
         </div>
         <p style={{ maxWidth: 1280, margin: "56px auto 0", color: "rgba(255,247,242,0.5)", fontSize: 12 }}>
-          © 2026 WinHer Vault Pty Ltd. ABN 00 000 000 000. 18+ only. Gamble responsibly.
+          © 2026 HerCircle Pty Ltd. ABN 00 000 000 000. 18+ only. Gamble responsibly.
         </p>
       </footer>
 

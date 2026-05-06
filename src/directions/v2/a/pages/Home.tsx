@@ -123,7 +123,7 @@ export default function HomeV2A() {
               {
                 n: "III.",
                 h: "Belong, with purpose.",
-                p: "Five dollars from every membership funds an Australian women's charity. We tell you exactly where it goes, every single month.",
+                p: "Five dollars from every membership funds Share The Dignity. We tell you exactly where it goes, every single month.",
               },
             ].map((b) => (
               <div key={b.n}>

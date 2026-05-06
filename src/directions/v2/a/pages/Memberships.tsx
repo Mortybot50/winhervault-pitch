@@ -230,7 +230,7 @@ export default function MembershipsV2A() {
             { q: "Can I cancel any time?", a: "Yes. Cancel from the dashboard, no questions asked. You stay a member until the end of your current month." },
             { q: "What if I don't win anything?", a: "That's the point of how we built this. The discount vault, events, and partner perks are designed to pay back your membership several times over — winning a draw is the bonus, not the bargain." },
             { q: "How are the draws conducted?", a: "Live on Instagram, monthly, by an independent draw caller. Licence VIC TP/03720. Records published within 48 hours." },
-            { q: "Where does the charity money go?", a: "$5 from every membership goes to an Australian women's charity (final partner announcing soon). Reported on every dashboard, audited annually." },
+            { q: "Where does the charity money go?", a: "$5 from every membership goes to Share The Dignity. Reported on every dashboard, audited annually." },
             { q: "Can I gift a membership?", a: "Yes — for now via email. Full gifting flow ships in late May 2026." },
           ].map((f) => (
             <div

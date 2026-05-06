@@ -47,7 +47,7 @@ export default function LoginV2A() {
           >
             {[
               "Cancel any time, no questions",
-              "$5 of every membership funds an Australian women's charity",
+              "$5 of every membership funds Share The Dignity",
               "Live monthly draws on Instagram",
             ].map((p) => (
               <li

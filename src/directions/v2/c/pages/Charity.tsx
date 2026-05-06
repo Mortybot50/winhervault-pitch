@@ -73,7 +73,7 @@ export default function CharityV2C() {
             "We didn't want to build another giveaway site. We built a club that
             stands for something. The giving isn't a tagline — it's the deal."
           </p>
-          <p className="eyebrow" style={{ marginTop: 24 }}>— WinHer Vault, founder's letter</p>
+          <p className="eyebrow" style={{ marginTop: 24 }}>— HerCircle, founder's letter</p>
         </div>
       </section>
 

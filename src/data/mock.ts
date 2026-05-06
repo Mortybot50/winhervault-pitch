@@ -617,10 +617,10 @@ export type V2Charity = {
 export const v2Charities: readonly V2Charity[] = [
   {
     id: "primary",
-    name: "An Australian women's charity",
+    name: "Share The Dignity",
     cause: "Women's safety, dignity, and economic independence",
     blurb:
-      "We're finalising our charity partnership for 2026 — an Australian women's organisation working at the intersection of safety, dignity, and economic independence. We'll announce shortly.",
+      "Our 2026 charity partner is Share The Dignity — an Australian women's organisation working at the intersection of safety, dignity, and economic independence.",
     contributedYTD: 24820,
     hue: 350,
   },
