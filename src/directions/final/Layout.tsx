@@ -128,9 +128,16 @@ export default function LayoutFinal() {
       {/* Footer */}
       <footer className="final-footer">
         <div className="final-container">
-          <div className="final-display final-display-lg" style={{ paddingBottom: 48 }}>
-            Join the circle.<br />
-            Win more than just prizes.
+          <div
+            className="final-display"
+            style={{
+              paddingBottom: 48,
+              fontSize: "clamp(40px, 6vw, 80px)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            <span style={{ display: "block", lineHeight: 1, marginBlock: "0.05em" }}>JOIN THE CIRCLE.</span>
+            <span style={{ display: "block", lineHeight: 1, marginBlock: "0.05em" }}>WIN MORE THAN JUST PRIZES.</span>
           </div>
           <Link to="/final/memberships" className="final-cta" style={{ marginBottom: 80 }}>
             Become a member
@@ -210,7 +217,7 @@ export default function LayoutFinal() {
             }}
           >
             <span>© 2026 HerCircle · Pitch artefact · Mock data</span>
-            <span>Charity partner: Share The Dignity</span>
+            <span>Charity partners: BCNA · OzChild · FOUR PAWS</span>
           </div>
         </div>
       </footer>

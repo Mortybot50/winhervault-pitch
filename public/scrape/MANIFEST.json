@@ -1,0 +1,170 @@
+{
+  "_note": "Real content extracted from winhervault.com on 2026-05-06. Use this verbatim in the /final build to make the pitch look real. All images live in /scrape/<filename> served from public/scrape. Strip query strings; just use the basename. The HerCircle rebrand still applies — replace 'WinHer Vault' / 'Vault' brand language with 'HerCircle' / 'the Circle' throughout. Pricing matches the live site exactly.",
+  "brand": {
+    "current": "WinHer Vault",
+    "rebrand_to": "HerCircle",
+    "tagline_homepage": "THE LIFESTYLE CLUB FOR WOMEN WHO WANT MORE",
+    "supporting": "Cancel anytime. New giveaways every month.",
+    "rebranded_tagline_suggestion": "JOIN THE CIRCLE. WIN MORE THAN JUST PRIZES."
+  },
+  "pricing": {
+    "_note": "Match the live site exactly. Drop the old $9.99/$29.99/$49.99 placeholder.",
+    "tiers": [
+      {
+        "name_current": "Entry Member",
+        "name_rebranded": "The Insider",
+        "price_weekly": "$2.50",
+        "price_billing": "Billed monthly. Cancel anytime.",
+        "features": [
+          "10 × accumulating FREE entries into every giveaway",
+          "Access to all weekly giveaways",
+          "Access to exclusive member-only discounts",
+          "Access to member-only events & content",
+          "Early access to selected giveaways & comps"
+        ]
+      },
+      {
+        "name_current": "Plus Member",
+        "name_rebranded": "The Edit",
+        "price_weekly": "$5",
+        "price_billing": "Billed monthly. Cancel anytime.",
+        "best_value": true,
+        "features": [
+          "25 × accumulating FREE entries into every giveaway",
+          "Access to all weekly giveaways",
+          "Access to exclusive member-only discounts",
+          "Access to member-only events & content",
+          "Early access to selected giveaways & competitions"
+        ]
+      },
+      {
+        "name_current": "VIP Member",
+        "name_rebranded": "The Circle",
+        "price_weekly": "$15",
+        "price_billing": "Billed monthly. Cancel anytime.",
+        "features": [
+          "100 × accumulating FREE entries into every giveaway",
+          "Access to all weekly giveaways",
+          "Access to exclusive member-only discounts",
+          "Access to member-only events & content",
+          "VIP-only perks, bonus experiences & premium event access"
+        ]
+      }
+    ]
+  },
+  "current_giveaway": {
+    "title": "APPLE BUNDLE OR THE CASH",
+    "prize_description": "Apple essentials — AirPods Max + Apple Watch — or $2,000 cash. The choice is yours.",
+    "alt_short": "One lucky winner will choose between an Apple bundle, featuring AirPods Max + a Apple Watch, or take home $2,000 cash.",
+    "live_format": "Tune in live on Instagram to see the winner announced. Wednesdays at 8PM AEDT.",
+    "hero_image": "/scrape/ChatGPT_Image_Apr_17_2026_11_17_21_AM.png",
+    "alt_images": [
+      "/scrape/40e55bf73e13b668e77a980b183ed577.jpg",
+      "/scrape/c8df4028ebbdb6bcf5020feefc80de38.jpg",
+      "/scrape/19f0835a23b8e152d49e73b76fdac7ef.jpg"
+    ],
+    "entry_packs": [
+      {"name": "BRONZE PACK", "duration": "1 day access to the Vault Platform"},
+      {"name": "SILVER PACK", "duration": "3 days access to the Vault Platform"},
+      {"name": "GOLD PACK", "duration": "7 days access to the Vault Platform"},
+      {"name": "Platinum Pack", "duration": "Most deluxe — maximum entries + premium perks", "entries": "300 entries into this giveaway"}
+    ]
+  },
+  "winners": [
+    {"name": "Ava B", "image": "/scrape/IMG_2341.jpg"},
+    {"name": "Janaya W", "image": "/scrape/IMG_6736.jpg"},
+    {"name": "Tiana M", "image": "/scrape/IMG_6737.jpg"},
+    {"name": "Adithi C", "image": "/scrape/dior_bundle.jpg", "prize_hint": "Dior bundle"},
+    {"name": "Holly M", "image": "/scrape/dyson_sample_winner.jpg", "prize_hint": "Dyson"},
+    {"name": "Emily B", "image": "/scrape/8af500aa1e5261a54f1ee8abba22c6cc.jpg"},
+    {"name": "Sam T", "image": "/scrape/IMG_6738.jpg"},
+    {"name": "Kathryn D", "image": "/scrape/IMG_6739.jpg"}
+  ],
+  "events_summary": {
+    "headline": "Exclusive events for our members.",
+    "sub": "Sign up to RSVP to our member events.",
+    "cta": "Join HerCircle to unlock exclusive member events, priority RSVP access, and more.",
+    "recap_label": "A little recap of our recent nights!",
+    "categories": ["Pilates mornings", "cocktail nights", "movie nights", "curated experiences"]
+  },
+  "events_listing": [
+    {"title": "Pilates + Pinot Sunday", "venue": "Studio Pilates · Toorak", "date_label": "Sun 17 May · 9:00am AEST"},
+    {"title": "Founder's Circle Brunch", "venue": "Stokehouse · St Kilda", "date_label": "Sat 30 May · 11:00am AEST"},
+    {"title": "Movie Night — Members Cinema", "venue": "Lido Cinemas · Hawthorn", "date_label": "Wed 4 Jun · 7:30pm AEST"},
+    {"title": "Cocktail + Connection Evening", "venue": "Eau de Vie · CBD", "date_label": "Thu 12 Jun · 7:00pm AEST"},
+    {"title": "Breathwork + Brunch", "venue": "The Shala · Fitzroy", "date_label": "Sat 21 Jun · 9:30am AEST"},
+    {"title": "Perfume Workshop", "venue": "Lumira · Armadale", "date_label": "Sun 6 Jul · 2:00pm AEST"}
+  ],
+  "discount_partners": [
+    {"name": "Mermaid Hair", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "A modern hair tools brand offering professional-grade wavers, curlers and styling accessories that help you create salon-worthy looks at home."},
+    {"name": "White Glow", "amount": "15% OFF SITEWIDE", "code": "HERCIRCLE15", "desc": "Teeth-whitening and oral-care brand focused on delivering a brighter, healthier smile through simple at-home treatments."},
+    {"name": "White Fox Boutique", "amount": "15% OFF SITEWIDE", "code": "HERCIRCLE15", "desc": "Bold, trend-forward online fashion brand delivering on-trend drops, fresh loungewear and occasion-ready pieces."},
+    {"name": "Rent My Dress", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "Designer dress rentals — perfect for weddings, birthdays, formals and girls' nights out. Over 350 designer pieces."},
+    {"name": "The Booby Co", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "Innovative fashion solutions designed to support, shape and smooth — wear what you want with total confidence."},
+    {"name": "Princess Polly", "amount": "15% OFF SITEWIDE", "code": "HERCIRCLE15", "desc": "Go-to online fashion boutique offering on-trend clothing, accessories and essentials for everyday style."},
+    {"name": "Alya Skin", "amount": "10% OFF SITEWIDE", "code": "HERCIRCLE10", "desc": "High-performance, clean formulations inspired by Australian botanicals. Iconic pink clay mask + visible-results skincare."},
+    {"name": "MAC Cosmetics", "amount": "15% OFF SITEWIDE", "code": "HERCIRCLE15", "desc": "Globally loved beauty brand known for high-performance makeup, professional-grade formulas and iconic shades."},
+    {"name": "Coco & Eve", "amount": "15% OFF SITEWIDE", "code": "HERCIRCLE15", "desc": "Beauty brand known for high-performance haircare and skincare inspired by tropical ingredients.", "logo": "/scrape/cocoandeve_logo.jpg"},
+    {"name": "Lounge Lovers", "amount": "15% OFF SITEWIDE", "code": "HERCIRCLE15", "desc": "Contemporary furniture and homewares — stylish, comfortable pieces designed to elevate everyday living.", "logo": "/scrape/Lounge-lovers-logo.webp"},
+    {"name": "Cotton On", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "Aussie lifestyle brand offering affordable, everyday fashion, basics and accessories for every wardrobe.", "logo": "/scrape/cotton_on_logo.png"},
+    {"name": "Skinteq", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "Science-led skincare designed to nourish, protect and elevate. Advanced ingredients with targeted formulas.", "logo": "/scrape/Skinteq_logo.jpg"},
+    {"name": "Fizz Functional", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "Sugar-free, functional sparkling beverages crafted for lifestyle balance — refreshing smart-drink alternatives.", "logo": "/scrape/fizz_functional_logo.jpg"},
+    {"name": "Ms Morning", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "Skincare made for busy mornings — clean, multi-tasking formulas that deliver glass-skin glow with minimal effort."},
+    {"name": "POC Beauty", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "Vibrant Aussie-founded skincare for melanin-rich skin — cultural heritage + science-backed formulas.", "logo": "/scrape/POC-PRIMARY-LOGO-blue.webp"},
+    {"name": "Hello Molly", "amount": "20% OFF SITEWIDE", "code": "HERCIRCLE20", "desc": "Leading Australian fashion label — modern, feminine pieces for stylish, confident, effortlessly-put-together looks.", "logo": "/scrape/Hello_Molly_logo.png"}
+  ],
+  "charity_partners": [
+    {
+      "name": "Breast Cancer Network Australia",
+      "tagline": "Empowering Australians affected by breast cancer.",
+      "description": "Breast Cancer Network Australia (BCNA) is Australia's peak consumer organisation working to ensure that people affected by breast cancer receive the best possible care, information and support tailored to their needs. BCNA advocates for better treatment, connects individuals and families to trusted resources, and represents the voices of those affected to strengthen the healthcare system.",
+      "image": "/scrape/bcna-celebration-at-the-office_web_banner.webp"
+    },
+    {
+      "name": "OzChild",
+      "tagline": "Stronger families. Safer children. Brighter futures.",
+      "description": "OzChild works to ensure vulnerable children, young people and families receive the care, protection and support they need to stay safe and thrive. Through foster care, family strengthening and early intervention programs, OzChild helps create stable homes and brighter futures for children across Australia.",
+      "logo": "/scrape/oz_child_logo.png"
+    },
+    {
+      "name": "FOUR PAWS",
+      "tagline": "Revealing suffering, rescuing animals, protecting futures.",
+      "description": "FOUR PAWS Australia is a registered charity working for a world where animals under human influence are treated with respect and compassion. Through campaigns, rescues and advocacy, FOUR PAWS reveals animal suffering, helps animals in need and drives long-term change in animal welfare both in Australia and internationally.",
+      "image": "/scrape/four_paws.jpg"
+    }
+  ],
+  "homepage_steps_section": {
+    "headline": "How HerCircle works",
+    "steps": [
+      {"title": "Unlock Access", "desc": "Joining HerCircle gives you access to everything inside the club. Giveaways, perks, and experiences designed to elevate your everyday."},
+      {"title": "Big Wins, Automatically", "desc": "Every member is automatically entered into our major giveaways. Getaways, designer bags — the giveaways that feel surreal when you win them."},
+      {"title": "Enjoy Our Regular Giveaways", "desc": "Smaller, frequent giveaways featuring products and experiences you'll actually use and love."},
+      {"title": "Activate Your Partner Discounts", "desc": "Member-only savings up to 30% off with brands you already shop, spanning beauty, fashion, wellness, and lifestyle."},
+      {"title": "RSVP To Member Events", "desc": "Members-only events designed to bring the community together. Pilates mornings, cocktail nights, and curated experiences hosted every month."}
+    ]
+  },
+  "supporting_copy_real": {
+    "all_the_fun": "All The Fun From Within The Community",
+    "live_promise": "We're just getting started: The prizes are getting bigger, and your chances to win are getting better. Join us on our lives, Wednesdays at 8PM AEDT.",
+    "real_members_strap": "Real members. Real prizes. Every week.",
+    "cta_primary": "Join the club to unlock giveaways, perks, and experiences!",
+    "billing_note": "Cancel anytime. New giveaways every month."
+  },
+  "lifestyle_imagery": {
+    "_note": "Free to use as full-bleed hero/section backgrounds. Already downloaded to /scrape/. These are real WinHer Vault photoshoot stills.",
+    "hero_options": [
+      "/scrape/0R7A6513.jpg",
+      "/scrape/0R7A6705.jpg",
+      "/scrape/0R7A6720.jpg",
+      "/scrape/0R7A6869.jpg",
+      "/scrape/0R7A6881.jpg",
+      "/scrape/0R7A7002.jpg",
+      "/scrape/Girls_at_brunch.jpg"
+    ],
+    "preview_options": [
+      "/scrape/9233CF99-6936-4D1A-90A7-463066C897BC.png",
+      "/scrape/A45E2F78-5E34-45E4-B27A-01E6F3F44BBF.jpg",
+      "/scrape/Shopify_Banner_2240_x_1230_px_3.png"
+    ]
+  }
+}

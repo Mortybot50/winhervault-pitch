@@ -1,85 +1,91 @@
 import { Link } from "react-router-dom";
-import { finalCharity, portraitStyle } from "../../../data/finalMock";
-
-const PARTNER_LOGOS = [
-  "Aje", "Camilla & Marc", "Aesop", "Bondi Sands", "Frank Body", "T2", "Mecca", "P.E Nation",
-] as const;
+import { finalCharities, finalCharityStats, finalPartners } from "../../../data/finalMock";
 
 export default function CharityFinal() {
   return (
     <>
       <section className="final-hero" style={{ paddingBottom: 0 }}>
         <div className="final-container">
-          <span className="final-eyebrow" style={{ color: "var(--hot)" }}>— Charity partner</span>
-          <h1 className="final-display final-display-xl" style={{ marginTop: 16 }}>
-            Share The<br />Dignity.
+          <span className="final-eyebrow" style={{ color: "var(--hot)" }}>— Charity partners</span>
+          <h1
+            className="final-display"
+            style={{
+              marginTop: 16,
+              fontSize: "clamp(44px, 6.4vw, 88px)",
+              letterSpacing: "-0.02em",
+              maxWidth: 1200,
+            }}
+          >
+            <span style={{ display: "block", lineHeight: 1.02, marginBlock: "0.04em" }}>EVERY MONTH, A PORTION OF HERCIRCLE GOES</span>
+            <span style={{ display: "block", lineHeight: 1.02, marginBlock: "0.04em", color: "var(--hot)" }}>TO CAUSES WE GENUINELY CARE ABOUT.</span>
           </h1>
-          <p style={{ fontSize: 18, lineHeight: 1.6, maxWidth: 720, marginTop: 32 }}>
-            {finalCharity.story}
+          <p style={{ fontSize: 17, lineHeight: 1.65, maxWidth: 760, marginTop: 32, color: "var(--ink-soft)" }}>
+            {finalCharityStats.story}
           </p>
         </div>
       </section>
 
-      <section className="final-section">
+      {/* STATS */}
+      <section className="final-section" style={{ paddingBottom: 24 }}>
         <div className="final-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="final-charity-feature">
-            <div className="final-portrait" style={{ ...portraitStyle(350), aspectRatio: "5/4" }} />
-            <div>
-              <div className="final-numeral" style={{ marginBottom: 12 }}>$5</div>
-              <h2 className="final-display final-display-lg">
-                From every<br />membership.
-              </h2>
-              <p style={{ fontSize: 15, lineHeight: 1.65, marginTop: 24, color: "var(--ink-soft)", maxWidth: 480 }}>
-                Direct, unconditional, every month. No marketing carve-outs, no admin slice. The contribution is published
-                on every member dashboard so you can see what your membership is doing.
-              </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 32 }}>
-                <div>
-                  <div className="final-stat-value" style={{ color: "var(--hot)" }}>${finalCharity.contributedYTD.toLocaleString()}</div>
-                  <div className="final-stat-label">Contributed YTD</div>
-                </div>
-                <div>
-                  <div className="final-stat-value">{finalCharity.womenSupported.toLocaleString()}</div>
-                  <div className="final-stat-label">Women supported</div>
-                </div>
-              </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="final-charity-stats">
+            <div className="final-card" style={{ padding: 32 }}>
+              <div className="final-stat-value" style={{ color: "var(--hot)" }}>${finalCharityStats.contributedYTD.toLocaleString()}</div>
+              <div className="final-stat-label">Contributed to date</div>
+            </div>
+            <div className="final-card" style={{ padding: 32 }}>
+              <div className="final-stat-value">{finalCharityStats.womenSupported.toLocaleString()}+</div>
+              <div className="final-stat-label">Women & families supported</div>
+            </div>
+            <div className="final-card" style={{ padding: 32 }}>
+              <div className="final-stat-value">3</div>
+              <div className="final-stat-label">Active charity partners</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* IMPACTS */}
+      {/* THREE CHARITIES */}
       <section className="final-section" style={{ background: "#fff" }}>
         <div className="final-container">
-          <span className="final-eyebrow">— Where the money goes</span>
-          <h2 className="final-display final-display-lg" style={{ marginTop: 12, marginBottom: 64, maxWidth: 720 }}>
-            Four impact pillars.
+          <span className="final-eyebrow">— Our partners</span>
+          <h2 className="final-display final-display-lg" style={{ marginTop: 12, marginBottom: 56, maxWidth: 760, letterSpacing: "-0.01em" }}>
+            Three charities we back.
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }} className="final-impact-grid">
-            {finalCharity.impacts.map((imp, i) => (
-              <article key={imp.title}>
-                <div className="final-portrait" style={{ ...portraitStyle(imp.hue), aspectRatio: "1/1" }} />
-                <div className="final-eyebrow" style={{ color: "var(--hot)", marginTop: 16 }}>0{i + 1}</div>
-                <h3 className="final-display final-display-md" style={{ marginTop: 8, fontSize: 28 }}>{imp.title}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--ink-soft)", marginTop: 12 }}>{imp.blurb}</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }} className="final-charities-grid">
+            {finalCharities.map((ch, i) => (
+              <article key={ch.name} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <div style={{ aspectRatio: "5/4", overflow: "hidden", background: "var(--cream)" }}>
+                  {ch.image ? (
+                    <img src={ch.image} alt={ch.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" />
+                  ) : (
+                    <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      {ch.logo && <img src={ch.logo} alt={ch.name} style={{ maxHeight: 120, maxWidth: "70%", objectFit: "contain" }} />}
+                    </div>
+                  )}
+                </div>
+                <div className="final-eyebrow" style={{ color: "var(--hot)" }}>0{i + 1}</div>
+                <div className="final-display" style={{ fontSize: 28, lineHeight: 1.05, letterSpacing: "-0.005em" }}>{ch.name}</div>
+                <p style={{ fontSize: 14.5, fontWeight: 600, color: "var(--ink)", margin: 0, lineHeight: 1.5 }}>{ch.tagline}</p>
+                <p style={{ fontSize: 13.5, lineHeight: 1.65, color: "var(--ink-soft)", margin: 0 }}>{ch.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PARTNER LOGOS */}
+      {/* PARTNER LOGOS — brand partners contributing */}
       <section className="final-section">
         <div className="final-container">
-          <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 32, alignItems: "flex-end" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 24, alignItems: "flex-end" }}>
             <span className="final-eyebrow">— Brand partners contributing</span>
-            <span className="final-eyebrow" style={{ color: "var(--muted)" }}>2026</span>
+            <span className="final-eyebrow" style={{ color: "var(--muted)" }}>{finalPartners.length} brands · 2026</span>
           </div>
           <hr className="final-rule-strong" />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", borderBottom: "1.5px solid var(--ink)" }} className="final-logo-grid">
-            {PARTNER_LOGOS.map((p) => (
+            {finalPartners.slice(0, 8).map((p) => (
               <div
-                key={p}
+                key={p.name}
                 style={{
                   borderRight: "1px solid var(--rule)",
                   padding: "32px 16px",
@@ -89,9 +95,17 @@ export default function CharityFinal() {
                   letterSpacing: "0.04em",
                   textTransform: "uppercase",
                   color: "var(--ink)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minHeight: 96,
                 }}
               >
-                {p}
+                {p.logo ? (
+                  <img src={p.logo} alt={p.name} style={{ maxHeight: 48, maxWidth: "100%", objectFit: "contain" }} loading="lazy" />
+                ) : (
+                  p.name.toUpperCase()
+                )}
               </div>
             ))}
           </div>
@@ -101,8 +115,18 @@ export default function CharityFinal() {
       {/* CTA */}
       <section className="final-section" style={{ background: "var(--hot)", color: "#fff", textAlign: "center", padding: "120px 0" }}>
         <div className="final-container">
-          <h2 className="final-display final-display-xl" style={{ color: "#fff", maxWidth: 1100, margin: "0 auto 32px" }}>
-            Become a member.<br />Support the cause.
+          <h2
+            className="final-display"
+            style={{
+              color: "#fff",
+              maxWidth: 1100,
+              margin: "0 auto 32px",
+              fontSize: "clamp(48px, 7vw, 96px)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            <span style={{ display: "block", lineHeight: 1, marginBlock: "0.05em" }}>BECOME A MEMBER.</span>
+            <span style={{ display: "block", lineHeight: 1, marginBlock: "0.05em" }}>SUPPORT THE CAUSE.</span>
           </h2>
           <Link to="/final/memberships" className="final-cta" style={{ background: "#fff", color: "var(--hot)" }}>
             Join the circle
@@ -111,13 +135,13 @@ export default function CharityFinal() {
       </section>
 
       <style>{`
-        @media (max-width: 900px) {
-          .final-charity-feature { grid-template-columns: 1fr !important; gap: 32px !important; }
-          .final-impact-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .final-logo-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        @media (max-width: 1100px) {
+          .final-charities-grid { grid-template-columns: 1fr 1fr !important; }
         }
-        @media (max-width: 500px) {
-          .final-impact-grid { grid-template-columns: 1fr !important; }
+        @media (max-width: 900px) {
+          .final-charity-stats { grid-template-columns: 1fr !important; }
+          .final-charities-grid { grid-template-columns: 1fr !important; }
+          .final-logo-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>
     </>

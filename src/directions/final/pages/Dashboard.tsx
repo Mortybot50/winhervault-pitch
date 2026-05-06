@@ -6,7 +6,6 @@ import {
   finalNextDraw,
   finalPartners,
   finalCountdown,
-  portraitStyle,
 } from "../../../data/finalMock";
 
 export default function DashboardFinal() {
@@ -17,7 +16,9 @@ export default function DashboardFinal() {
   }, []);
 
   const rsvped = finalEvents.filter((e) => (finalDashboard.rsvpedEventIds as readonly string[]).includes(e.id));
-  const unlocked = finalPartners.filter((p) => (finalDashboard.unlockedPartnerNames as readonly string[]).includes(p.name)).slice(0, 4);
+  const unlocked = finalPartners
+    .filter((p) => (finalDashboard.unlockedPartnerNames as readonly string[]).includes(p.name))
+    .slice(0, 4);
 
   return (
     <>
@@ -27,10 +28,10 @@ export default function DashboardFinal() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 16 }}>
             <div>
               <span className="final-eyebrow" style={{ color: "var(--hot)" }}>— Member dashboard</span>
-              <h1 className="final-display final-display-lg" style={{ marginTop: 12 }}>
-                Welcome back, {finalDashboard.memberName}.
+              <h1 className="final-display final-display-lg" style={{ marginTop: 12, letterSpacing: "-0.01em" }}>
+                Welcome back, {finalDashboard.memberName} {finalDashboard.initial}.
               </h1>
-              <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 8 }}>{finalDashboard.joinedDate}</p>
+              <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 8 }}>{finalDashboard.joinedDate} · {finalDashboard.tier}</p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Link to="/final" className="final-cta-text">View site →</Link>
@@ -45,9 +46,9 @@ export default function DashboardFinal() {
         <div className="final-container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="final-stats-grid">
             <StatCard value={String(finalDashboard.entriesThisDraw)} label="Entries this draw" accent />
-            <StatCard value={finalDashboard.tier} label="Current tier" />
             <StatCard value={`$${finalDashboard.charityContributedYTD}`} label="Charity contributed YTD" />
-            <StatCard value={String(finalDashboard.upcomingEventsCount)} label="Upcoming events" />
+            <StatCard value={String(finalDashboard.upcomingEventsCount)} label="RSVP'd events" />
+            <StatCard value={String(finalDashboard.unlockedCodes)} label="Unlocked codes" />
           </div>
         </div>
       </section>
@@ -55,12 +56,18 @@ export default function DashboardFinal() {
       {/* ACTIVE DRAW */}
       <section className="final-section" style={{ paddingTop: 16, paddingBottom: 48 }}>
         <div className="final-container">
-          <div className="final-card" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr" }} >
-            <div className="final-portrait" style={{ ...portraitStyle(18), aspectRatio: "auto", height: "100%", minHeight: 340 }}>
+          <div className="final-card final-active-draw" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr" }}>
+            <div style={{ position: "relative", overflow: "hidden", minHeight: 340, background: "var(--ink)" }}>
+              <img
+                src={finalNextDraw.heroImage}
+                alt="Active draw — Apple bundle"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
               <span
                 style={{
-                  display: "inline-block",
-                  margin: "24px",
+                  position: "absolute",
+                  top: 24,
+                  left: 24,
                   background: "var(--ink)",
                   color: "#fff",
                   fontFamily: "Raleway, sans-serif",
@@ -78,8 +85,8 @@ export default function DashboardFinal() {
             <div style={{ padding: 40, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <span className="final-eyebrow" style={{ color: "var(--hot)" }}>— This week</span>
-                <h2 className="final-display final-display-lg" style={{ marginTop: 12 }}>
-                  {finalNextDraw.prize}
+                <h2 className="final-display final-display-lg" style={{ marginTop: 12, letterSpacing: "-0.01em" }}>
+                  {finalNextDraw.title}
                 </h2>
                 <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 12 }}>
                   Drawn live · {finalNextDraw.drawDate}
@@ -129,7 +136,9 @@ export default function DashboardFinal() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="final-rsvp-grid">
             {rsvped.map((e) => (
               <article key={e.id} className="final-card">
-                <div className="final-portrait" style={{ ...portraitStyle(e.hue), aspectRatio: "5/3" }} />
+                <div style={{ aspectRatio: "5/3", overflow: "hidden" }}>
+                  <img src={e.image} alt={e.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" />
+                </div>
                 <div style={{ padding: 24 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <span className="final-eyebrow" style={{ color: "var(--hot)" }}>{e.category}</span>
@@ -137,9 +146,9 @@ export default function DashboardFinal() {
                       ✓ RSVP'd
                     </span>
                   </div>
-                  <h3 className="final-display final-display-md" style={{ marginTop: 10, fontSize: 26 }}>{e.title}</h3>
+                  <h3 className="final-display final-display-md" style={{ marginTop: 10, fontSize: 24 }}>{e.title}</h3>
                   <div style={{ fontSize: 13, color: "var(--muted)", marginTop: 8 }}>
-                    {e.date} · {e.city}
+                    {e.date}
                   </div>
                 </div>
               </article>
@@ -158,9 +167,16 @@ export default function DashboardFinal() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="final-codes-grid">
             {unlocked.map((p) => (
               <article key={p.name} className="final-card" style={{ padding: 22 }}>
-                <div className="final-eyebrow" style={{ color: "var(--muted)" }}>{p.category}</div>
-                <div className="final-display" style={{ fontSize: 22, marginTop: 6, letterSpacing: "0.02em" }}>{p.name.toUpperCase()}</div>
-                <div className="final-display" style={{ fontSize: 22, color: "var(--hot)", marginTop: 8 }}>{p.discount}</div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 56, marginBottom: 12 }}>
+                  {p.logo ? (
+                    <img src={p.logo} alt={p.name} style={{ maxHeight: 48, maxWidth: "100%", objectFit: "contain" }} loading="lazy" />
+                  ) : (
+                    <div className="final-display" style={{ fontSize: 20, letterSpacing: "0.02em", textAlign: "center", lineHeight: 1 }}>
+                      {p.name.toUpperCase()}
+                    </div>
+                  )}
+                </div>
+                <div className="final-display" style={{ fontSize: 18, color: "var(--hot)", marginTop: 4, letterSpacing: "0.01em" }}>{p.amount}</div>
                 <code
                   style={{
                     display: "block",
@@ -206,8 +222,8 @@ export default function DashboardFinal() {
             </div>
             <div className="final-card" style={{ padding: 32 }}>
               <span className="final-eyebrow">— Subscription</span>
-              <h3 className="final-display final-display-md" style={{ marginTop: 10 }}>$29.99 / week</h3>
-              <p style={{ fontSize: 13, color: "var(--muted)", marginTop: 6 }}>Next billing: 13 May 2026</p>
+              <h3 className="final-display final-display-md" style={{ marginTop: 10 }}>{finalDashboard.tierWeekly} / week</h3>
+              <p style={{ fontSize: 13, color: "var(--muted)", marginTop: 6 }}>Next billing: 13 May 2026 · Billed monthly</p>
               <hr className="final-rule" style={{ margin: "20px 0" }} />
               <p style={{ fontSize: 14, lineHeight: 1.6, color: "var(--ink-soft)" }}>
                 Manage payment method, change tier, or pause your membership. Cancel anytime — no retention call.
@@ -227,13 +243,8 @@ export default function DashboardFinal() {
           .final-codes-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 900px) {
-          .final-card[style*="grid-template-columns: 1fr 1.2fr"] {
-            grid-template-columns: 1fr !important;
-          }
-          .final-card[style*="grid-template-columns: 1fr 1.2fr"] .final-portrait {
-            min-height: 220px !important;
-            aspect-ratio: 5/3 !important;
-          }
+          .final-active-draw { grid-template-columns: 1fr !important; }
+          .final-active-draw > div:first-child { aspect-ratio: 5/3 !important; min-height: 220px !important; }
           .final-rsvp-grid { grid-template-columns: 1fr !important; }
           .final-profile-grid { grid-template-columns: 1fr !important; }
         }

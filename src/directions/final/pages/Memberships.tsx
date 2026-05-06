@@ -2,28 +2,27 @@ import { Link } from "react-router-dom";
 import { finalTiers } from "../../../data/finalMock";
 
 const COMPARISON = [
-  { feature: "Entries per weekly draw", insider: "1", edit: "5", circle: "12" },
-  { feature: "Members-only newsletter", insider: "✓", edit: "✓", circle: "✓" },
-  { feature: "Discount vault — 8 brand partners", insider: "Preview", edit: "Full", circle: "Full" },
-  { feature: "Event RSVP", insider: "Open invitation", edit: "Priority", circle: "First-access" },
-  { feature: "Quarterly Edit drop", insider: "—", edit: "✓", circle: "✓" },
-  { feature: "Personal concierge", insider: "—", edit: "—", circle: "✓" },
-  { feature: "Annual signature gift", insider: "—", edit: "—", circle: "✓" },
-  { feature: "$5 to Share The Dignity each month", insider: "✓", edit: "✓", circle: "✓" },
+  { feature: "FREE entries / draw", insider: "10", edit: "25", circle: "100" },
+  { feature: "Access to all weekly giveaways", insider: "✓", edit: "✓", circle: "✓" },
+  { feature: "Member discounts", insider: "✓", edit: "✓", circle: "✓" },
+  { feature: "Member events", insider: "✓", edit: "✓", circle: "✓" },
+  { feature: "Early access to giveaways", insider: "✓", edit: "✓", circle: "✓" },
+  { feature: "VIP-only perks & bonus experiences", insider: "—", edit: "—", circle: "✓" },
+  { feature: "Premium event access", insider: "—", edit: "—", circle: "✓" },
 ] as const;
 
 const FAQ = [
   {
     q: "How does the weekly draw work?",
-    a: "Each week we run one giveaway. Insider members get one entry; The Edit gets five; Circle gets twelve. Drawn live on Instagram every Wednesday at 8pm AEST.",
+    a: "Each week we run one giveaway. Insider members get 10 accumulating FREE entries; The Edit gets 25; The Circle gets 100. Drawn live on Instagram every Wednesday at 8pm AEDT.",
   },
   {
     q: "Can I cancel anytime?",
-    a: "Yes. Cancel from your dashboard with one click. No retention call, no question. You stay a member until your billing period ends.",
+    a: "Yes. Cancel from your dashboard with one click. No retention call, no question. You stay a member until your billing period ends. New giveaways every month.",
   },
   {
     q: "Where does the charity money go?",
-    a: "$5 of every membership goes directly to Share The Dignity. We publish the running total on every member dashboard and on our charity page.",
+    a: "Every month, a portion of HerCircle goes to causes we genuinely care about — Breast Cancer Network Australia, OzChild, and FOUR PAWS. We publish the running total on every member dashboard.",
   },
   {
     q: "Do discount codes work alongside sales?",
@@ -42,11 +41,20 @@ export default function MembershipsFinal() {
       <section className="final-hero">
         <div className="final-container">
           <span className="final-eyebrow">— Memberships</span>
-          <h1 className="final-display final-display-xl" style={{ marginTop: 16, maxWidth: 1280 }}>
-            Three weekly tiers.<br /><span style={{ color: "var(--hot)" }}>One circle.</span>
+          <h1
+            className="final-display"
+            style={{
+              marginTop: 16,
+              fontSize: "clamp(48px, 7.4vw, 96px)",
+              letterSpacing: "-0.02em",
+              maxWidth: 1100,
+            }}
+          >
+            <span style={{ display: "block", lineHeight: 1, marginBlock: "0.05em" }}>THREE WEEKLY TIERS.</span>
+            <span style={{ display: "block", lineHeight: 1, marginBlock: "0.05em", color: "var(--hot)" }}>ONE CIRCLE.</span>
           </h1>
           <p style={{ fontSize: 18, lineHeight: 1.6, maxWidth: 620, marginTop: 32 }}>
-            Cancel anytime. Founding members keep their tier price for life. The first week is on us.
+            Cancel anytime. New giveaways every month. The first week is on us.
           </p>
         </div>
       </section>
@@ -57,7 +65,7 @@ export default function MembershipsFinal() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="final-tiers-grid">
             {finalTiers.map((t) => (
               <article key={t.id} className={`final-pricing-card ${t.featured ? "featured" : ""}`}>
-                {t.featured && <div className="final-pricing-best">Best value</div>}
+                {t.badge && <div className="final-pricing-best">{t.badge}</div>}
                 <div>
                   <div className="final-eyebrow" style={{ color: t.featured ? "var(--hot)" : "var(--muted)" }}>
                     {t.id}
@@ -72,14 +80,14 @@ export default function MembershipsFinal() {
                 <div style={{ borderTop: t.featured ? "1px solid rgba(255,255,255,0.18)" : "1px solid var(--rule)", paddingTop: 24 }}>
                   <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
                     <span className="final-display" style={{ fontSize: 64, color: t.featured ? "var(--cream)" : "var(--ink)" }}>
-                      ${t.weekly.toFixed(2)}
+                      {t.weeklyLabel}
                     </span>
                     <span className="final-eyebrow" style={{ color: t.featured ? "rgba(255,241,227,0.7)" : "var(--muted)" }}>
                       / week
                     </span>
                   </div>
                   <div style={{ fontSize: 12, opacity: t.featured ? 0.6 : 0.55, marginTop: 6 }}>
-                    Approx ${(t.weekly * 4.33).toFixed(2)} / month · billed monthly
+                    Billed monthly. Cancel anytime.
                   </div>
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
@@ -89,7 +97,7 @@ export default function MembershipsFinal() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/final/login" className={t.featured ? "final-cta" : "final-cta-ghost"} style={t.featured ? {} : { borderColor: t.featured ? "var(--cream)" : "var(--ink)" }}>
+                <Link to="/final/login" className={t.featured ? "final-cta" : "final-cta-ghost"} style={t.featured ? {} : { borderColor: "var(--ink)" }}>
                   Choose {t.name}
                 </Link>
               </article>
@@ -102,7 +110,7 @@ export default function MembershipsFinal() {
       <section className="final-section" style={{ background: "#fff" }}>
         <div className="final-container">
           <span className="final-eyebrow">— Compare tiers</span>
-          <h2 className="final-display final-display-lg" style={{ marginTop: 12, marginBottom: 48 }}>
+          <h2 className="final-display final-display-lg" style={{ marginTop: 12, marginBottom: 48, letterSpacing: "-0.01em" }}>
             Side by side.
           </h2>
           <div style={{ overflowX: "auto" }}>
@@ -113,7 +121,7 @@ export default function MembershipsFinal() {
                   {finalTiers.map((t) => (
                     <th key={t.id} style={{ textAlign: "left", padding: "16px 12px" }}>
                       <div className="final-display" style={{ fontSize: 22 }}>{t.name}</div>
-                      <div className="final-eyebrow" style={{ color: "var(--muted)", marginTop: 4 }}>${t.weekly.toFixed(2)}/wk</div>
+                      <div className="final-eyebrow" style={{ color: "var(--muted)", marginTop: 4 }}>{t.weeklyLabel}/wk</div>
                     </th>
                   ))}
                 </tr>
@@ -135,13 +143,13 @@ export default function MembershipsFinal() {
 
       {/* FAQ */}
       <section className="final-section">
-        <div className="final-container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 64 }}>
+        <div className="final-container final-faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 64 }}>
           <div>
             <span className="final-eyebrow">— FAQ</span>
-            <h2 className="final-display final-display-lg" style={{ marginTop: 12 }}>
+            <h2 className="final-display final-display-lg" style={{ marginTop: 12, letterSpacing: "-0.01em" }}>
               Questions, answered.
             </h2>
-            <Link to="/final/charity" className="final-cta-text" style={{ marginTop: 24 }}>Read about the charity →</Link>
+            <Link to="/final/charity" className="final-cta-text" style={{ marginTop: 24 }}>Read about the charities →</Link>
           </div>
           <div>
             {FAQ.map((f) => (
@@ -170,10 +178,7 @@ export default function MembershipsFinal() {
       <style>{`
         @media (max-width: 900px) {
           .final-tiers-grid { grid-template-columns: 1fr !important; }
-          .final-section [style*="grid-template-columns: 1fr 1.4fr"] {
-            grid-template-columns: 1fr !important;
-            gap: 32px !important;
-          }
+          .final-faq-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
         }
       `}</style>
     </>

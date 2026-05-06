@@ -380,10 +380,11 @@ export default function Switcher() {
           </p>
         </div>
         <div>
-          <p style={{ margin: 0, color: "#C2BBAE", fontWeight: 500 }}>Charity partner</p>
+          <p style={{ margin: 0, color: "#C2BBAE", fontWeight: 500 }}>Charity partners</p>
           <p style={{ margin: "6px 0 0" }}>
-            Share The Dignity — $5 per member, per month. Counter on every member dashboard.
-            Pitch artefact: all numbers, winners and dashboard state are mock data.
+            Breast Cancer Network Australia · OzChild · FOUR PAWS — a portion of every membership
+            goes to causes we genuinely care about. Pitch artefact: all numbers, winners and
+            dashboard state are mock data.
           </p>
         </div>
       </footer>
