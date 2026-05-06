@@ -84,6 +84,8 @@ export default function HomeFinal() {
         <div className="final-marquee-track">
           {[0, 1].map((i) => (
             <span key={i}>
+              <span>JOIN THE CIRCLE</span>
+              <span className="dot">●</span>
               <span>WEEKLY DRAWS</span>
               <span className="dot">●</span>
               <span>EIGHT BRAND PARTNERS</span>
